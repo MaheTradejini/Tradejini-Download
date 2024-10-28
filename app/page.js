@@ -297,7 +297,7 @@ export default function Home() {
       </section>
 
 
-      <section className="py-12 bg-white dark:bg-gray-900">
+      {/* <section className="py-12 bg-white dark:bg-gray-900">
   <div className="container px-4 mx-auto">
     <div className="text-center mb-12">
       <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-200">
@@ -332,7 +332,7 @@ export default function Home() {
       ))}
     </div>
   </div>
-</section>
+</section> */}
 
 
 

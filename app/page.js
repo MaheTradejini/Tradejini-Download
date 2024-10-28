@@ -296,6 +296,48 @@ export default function Home() {
         </div>
       </section>
 
+
+      <section className="py-12 bg-white dark:bg-gray-900">
+  <div className="container px-4 mx-auto">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-200">
+        Application Forms
+      </h2>
+    </div>
+    <div className="flex flex-wrap justify-center mb-8">
+      {applicationData.map((tab, index) => (
+        <button
+          key={index}
+          className={`px-4 py-2 mx-2 mb-2 sm:mb-0 text-lg font-semibold rounded w-full sm:w-auto ${
+            activeTab === index
+              ? "bg-[#04ae87] text-white"
+              : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
+          }`}
+          onClick={() => setActiveTab(index)}
+        >
+          {tab.title}
+        </button>
+      ))}
+    </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {applicationData[activeTab].pdfs.map((pdf, pdfIndex) => (
+        <div
+          key={pdfIndex}
+          className="p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 transform transition duration-500 hover:scale-105 text-center hover:bg-gradient-to-br hover:from-green-100 hover:to-transparent hover:font-bold cursor-pointer"
+          onClick={() => handleCardClick(pdf.url)}
+        >
+          <FaFilePdf className="text-4xl text-[#118b64] dark:text-[#118b64] mx-auto mb-4" />
+          <p className="text-gray-600 dark:text-gray-400">{pdf.title}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
+
+
       <section className="py-12 bg-white dark:bg-gray-900">
         <div className="container px-4 mx-auto">
           <div className="text-center mb-12">

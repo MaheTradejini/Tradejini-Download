@@ -29,11 +29,16 @@ export default function Home() {
   };
 
   const handleCardClick = (pdfUrl) => {
+    // Open the PDF in a new tab
+    window.open(pdfUrl, "_blank");
+    
+    // Create a download link for the PDF
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.target = "_blank";
     link.download = pdfUrl.split("/").pop();
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
   };
 
   const applicationData = [
@@ -282,7 +287,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="flex flex-wrap justify-center">
-            {/* Card 1 */}
+        
             <div className="w-full sm:w-1/2 lg:w-1/3 p-4">
               <div
                 className="p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 transform transition duration-500 hover:scale-105 text-center cursor-pointer hover:bg-gradient-to-br hover:from-green-200 hover:to-transparent"

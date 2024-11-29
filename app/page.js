@@ -35,10 +35,10 @@ export default function Home() {
     // Create a download link for the PDF
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = pdfUrl.split("/").pop();
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // link.download = pdfUrl.split("/").pop();
+    // document.body.appendChild(link);
+    // link.click();
+    // document.body.removeChild(link);
   };
 
   const applicationData = [
